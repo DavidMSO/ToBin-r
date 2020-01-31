@@ -1,0 +1,77 @@
+public class Binärumwandlung{
+    public String toBinär(int Zahl){
+        String BinZahl = "";
+        if (Zahl >= 128){
+            BinZahl += "1";
+            Zahl -= 128;
+        }
+        else{
+            BinZahl += "0";
+        }
+        if (Zahl >= 64){
+            BinZahl += "1";
+            Zahl -= 64;
+        }
+        else{
+            BinZahl += "0";
+        }
+        if (Zahl >= 32){
+            BinZahl += "1";
+            Zahl -= 32;
+        }
+        else{
+            BinZahl += "0";
+        }
+        if (Zahl >= 16){
+            BinZahl += "1";
+            Zahl -= 16;
+        }
+        else{
+            BinZahl += "0";
+        }
+        BinZahl +=" ";
+        if (Zahl >= 8){
+            BinZahl += "1";
+            Zahl -= 8;
+        }
+        else{
+            BinZahl += "0";
+        }
+        if (Zahl >= 4){
+            BinZahl += "1";
+            Zahl -= 4;
+        }
+        else{
+            BinZahl += "0";
+        }
+        if (Zahl >= 2){
+            BinZahl += "1";
+            Zahl -= 2;
+        }
+        else{
+            BinZahl += "0";
+        }
+        if (Zahl >= 1){
+            BinZahl += "1";
+            Zahl -= 1;
+        }
+        else{
+            BinZahl += "0";
+        }
+        return BinZahl;
+    }
+    public void test(int zahl, String gewuenscht, String ergebnis){
+        if (gewuenscht.equals(ergebnis)) {
+            System.out.print(".");
+        } else {
+            System.out.println("\nFehler bei " + zahl);
+            System.out.println("Erwartet: " + gewuenscht);
+            System.out.println("Erhalten: " + ergebnis);
+        }
+    }
+    public void testetoBinär(){
+        test(256, "1000 0000", toBinär(256));
+        test(22, "0101 1011", toBinär(99));
+        test(22, "0001 0110", toBinär(22));
+    }
+}
